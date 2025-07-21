@@ -4,7 +4,7 @@ import "../Styles/search.css";
 import { useNavigate } from "react-router-dom";
 
 // The API key is now securely accessed from an environment variable.
-const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY;
+const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
 
 const SearchPage = () => {
   const [query, setQuery] = useState("");
