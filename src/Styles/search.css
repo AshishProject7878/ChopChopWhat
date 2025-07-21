@@ -1,0 +1,210 @@
+.search-hero{
+    margin-top: 50px;
+}
+
+.search-title {
+  font-size: 80px;
+}
+
+.form-group {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #fff5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(229, 60, 60, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+select{
+    color: #e53c3c;
+}
+
+input,
+select {
+  padding: 12px 16px;
+  width: 240px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: 0.3s ease;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #e53c3c;
+  box-shadow: 0 0 0 3px rgba(229, 60, 60, 0.2);
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #e53c3c;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #c42b2b;
+  transform: scale(1.05);
+}
+
+.card {
+  background: #fff;
+  margin: 40px auto 0;
+  padding: 20px 100px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.recipe-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.card .card-layout {
+  display: flex !important; /* Increased specificity and !important to ensure flex is applied */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+.left-side {
+  text-align: center;
+  flex: 1 1 300px;
+}
+
+.left-side img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.info-text {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+  font-size: 16px;
+}
+
+.right-side {
+  flex: 1 1 300px;
+  text-align: left;
+}
+
+.right-side ul {
+  padding-left: 20px;
+  line-height: 2;
+}
+
+.summary-section {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+.summary-section h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.summary-section p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.steps-section {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+.steps-section h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.steps-section ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.steps-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Home button container */
+.home-btn-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* Reuse cta-btn styles from style.css, but adjust size for Home button */
+.home-btn-container .cta-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Fade-in animation for page load */
+body {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Fade-out animation for redirect */
+body.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    body, body.fade-out {
+        animation: none;
+    }
+}
+
+@media (max-width: 1000px) { /* Adjusted threshold to make flex layout more likely */
+    .card .card-layout {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .left-side,
+    .right-side {
+        flex: 1 1 100%;
+    }
+}

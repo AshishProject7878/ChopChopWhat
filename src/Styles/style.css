@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cinzel", serif;
+  overflow-x: hidden;
+}
+
+/* --------------------- Hero section ------------------------ */
+.hero {
+  padding: 10px 150px;
+}
+.main-title {
+  font-size: 130px;
+  color: #e53c3c;
+  text-align: left;
+  margin-top: 50px;
+  letter-spacing: 8px;
+  line-height: 1.1;
+}
+
+.word span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.black-text {
+  color: black;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.img-container {
+  width: 50%;
+  height: 50%;
+}
+
+.img-container img {
+  width: 50%;
+  height: 50%;
+}
+
+.cta-btn {
+  background-color: #e53c3c;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #c53030;
+  scale: 1.05;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn{
+  text-decoration: none;
+  color: #ffffff;
+}
+/* --------------- About section ------------------------ */
+
+.about {
+  padding: 50px 150px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.about-text {
+  width: 50%;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+.bowl {
+  width: 70% !important;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+/* ----------------Steps section------------------------  */
+
+.steps {
+  padding: 50px 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-1 {
+  width: 30%;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 50px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.cuisine-img {
+  width: 80px;
+}
+
+.veg-non-veg-img {
+  width: 250px;
+  height: 120px;
+}
+
+.red-text {
+  color: #e53c3c;
+  font-weight: bold;
+}
+
+.service-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* or any suitable container width */
+  text-align: center;
+  margin-top: 20px; /* optional spacing */
+}
+
+/* ------------------ Footer ------------------------ */
+
+.footer {
+    display: flex;
+    justify-content: center;  /* centers horizontally */
+    align-items: center;      /* centers vertically */
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Fade-out animation */
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
