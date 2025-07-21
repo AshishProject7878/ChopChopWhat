@@ -3,10 +3,8 @@ import "../Styles/style.css";
 import "../Styles/search.css";
 import { useNavigate } from "react-router-dom";
 
-// Best Practice: Store your API key in an environment file (.env.local)
-// and access it like this: const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY;
-// For this example, we'll leave it here.
-const apiKey = "86547b119ce44232b2763562df77c94e";
+// The API key is now securely accessed from an environment variable.
+const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY;
 
 const SearchPage = () => {
   const [query, setQuery] = useState("");
@@ -20,27 +18,27 @@ const SearchPage = () => {
     setCardVisible(true);
     setCardContent("Searching...");
 
+    if (!apiKey) {
+      setCardContent(<p style={{ color: "red" }}>Error: API key is missing. Please check your .env configuration.</p>);
+      return;
+    }
+    
     try {
-      // Use URLSearchParams for cleaner and safer URL construction
       const params = new URLSearchParams({
         apiKey: apiKey,
-        number: 1, // We only need one result for this logic
+        number: 1,
       });
 
-      // --- LOGIC FIX ---
-      // Only add a random offset if ALL search fields are empty (the "surprise me" case)
       if (!query && !cuisine && !vegFilter) {
-        const randomOffset = Math.floor(Math.random() * 900); // Max offset is 900 for Spoonacular
+        const randomOffset = Math.floor(Math.random() * 900);
         params.append("offset", randomOffset);
       }
 
-      // Append other parameters if they exist
       if (query) params.append("query", query);
       if (cuisine) params.append("cuisine", cuisine);
       if (vegFilter === "vegetarian") {
         params.append("diet", "vegetarian");
       } else if (vegFilter === "non-veg") {
-        // A more targeted exclusion list for non-veg dishes
         params.append("excludeIngredients", "tofu, seitan, tempeh, lentils");
       }
 
@@ -66,7 +64,6 @@ const SearchPage = () => {
       }
       const recipe = await infoRes.json();
 
-      // Fallbacks for missing data
       const ingredients = recipe.extendedIngredients?.length
         ? recipe.extendedIngredients.map(ing => <li key={ing.id}>{ing.original}</li>)
         : <li>No ingredients listed.</li>;
@@ -96,7 +93,7 @@ const SearchPage = () => {
           </div>
           <div className="steps-section">
             <h3>📋 Steps:</h3>
-            <ol>{steps}</ol> {/* Using <ol> for numbered steps */}
+            <ol>{steps}</ol>
           </div>
         </>
       );
