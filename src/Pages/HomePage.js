@@ -190,7 +190,6 @@ const HomePage = () => {
 
       <div
         className="service-btn"
-        onClick={(e) => handleNavigation(e, "Search.html")}
       >
         <button className="cta-btn">
           <Link to="/search" className="btn">
