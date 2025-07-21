@@ -9,23 +9,24 @@ body {
   overflow-x: hidden;
 }
 
-/* --------------------- Hero section ------------------------ */
+/* Hero section */
 .hero {
-  padding: 10px 150px;
+  padding: 1rem;
+  text-align: center;
 }
+
 .main-title {
-  font-size: 130px;
+  font-size: clamp(1.8rem, 7vw, 2.5rem);
   color: #e53c3c;
-  text-align: left;
-  margin-top: 50px;
-  letter-spacing: 8px;
-  line-height: 1.1;
+  letter-spacing: 0.15rem;
+  line-height: 1.2;
+  margin-top: 1.5rem;
 }
 
 .word span {
   display: inline-block;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(20px);
 }
 
 .black-text {
@@ -34,114 +35,126 @@ body {
 
 .bottom-section {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .img-container {
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  max-width: 300px;
 }
 
 .img-container img {
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
 }
 
 .cta-btn {
   background-color: #e53c3c;
   color: white;
-  padding: 15px 30px;
+  padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 5px;
-  font-size: 20px;
+  border-radius: 0.3rem;
+  font-size: clamp(0.9rem, 4vw, 1rem);
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .cta-btn:hover {
   background-color: #c53030;
-  scale: 1.05;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.btn{
+.cta-btn:focus {
+  outline: 2px solid #e53c3c;
+  outline-offset: 2px;
+}
+
+.btn {
   text-decoration: none;
   color: #ffffff;
 }
-/* --------------- About section ------------------------ */
 
+/* About section */
 .about {
-  padding: 50px 150px;
+  padding: 1.5rem;
   background-color: #fff;
   text-align: center;
 }
 
 .about-section {
   display: flex;
-  justify-content: space-between;
-  align-self: center;
-  margin-top: 50px;
-  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .about-text {
-  width: 50%;
-  font-size: 20px;
+  width: 100%;
+  font-size: clamp(0.9rem, 3vw, 1rem);
   line-height: 1.6;
   color: #333;
   text-align: justify;
 }
 
 .bowl {
-  width: 70% !important;
-  margin-left: 20%;
-  margin-top: 5%;
+  width: 100%;
+  max-width: 250px;
+  margin: 1rem auto;
 }
 
-/* ----------------Steps section------------------------  */
-
+/* Steps section */
 .steps {
-  padding: 50px 150px;
+  padding: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .card-1 {
-  width: 30%;
-  height: 300px;
+  width: 100%;
+  max-width: 280px;
+  min-height: 220px;
   background-color: #f0f0f0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 1rem;
   text-align: center;
 }
 
 .card-img {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 50px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
 }
 
 .card-img img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .cuisine-img {
-  width: 80px;
+  width: 50px;
+  height: auto;
 }
 
 .veg-non-veg-img {
-  width: 250px;
-  height: 120px;
+  width: 120px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .red-text {
@@ -153,32 +166,154 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* or any suitable container width */
-  text-align: center;
-  margin-top: 20px; /* optional spacing */
+  width: 100%;
+  margin-top: 1rem;
 }
 
-/* ------------------ Footer ------------------------ */
-
+/* Footer */
 .footer {
-    display: flex;
-    justify-content: center;  /* centers horizontally */
-    align-items: center;      /* centers vertically */
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
 }
 
 /* Fade-out animation */
 .fade-out {
-    animation: fadeOut 0.5s ease-in-out forwards;
+  animation: fadeOut 0.5s ease-in-out forwards;
 }
 
 @keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fade-out,
+  .cta-btn:hover,
+  .word span {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .hero {
+    padding: 1.5rem 3rem;
+  }
+
+  .main-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    letter-spacing: 0.2rem;
+  }
+
+  .bottom-section {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .img-container {
+    width: 45%;
+    max-width: 400px;
+  }
+
+  .img-container img {
+    max-height: 350px;
+  }
+
+  .about {
+    padding: 2rem 3rem;
+  }
+
+  .about-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .about-text {
+    width: 45%;
+    font-size: clamp(1rem, 3vw, 1.1rem);
+  }
+
+  .bowl {
+    width: 45%;
+    max-width: 350px;
+    margin: 0;
+  }
+
+  .steps {
+    padding: 2rem 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card-1 {
+    width: 30%;
+    max-width: 300px;
+    min-height: 250px;
+  }
+
+  .card-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cuisine-img {
+    width: 60px;
+  }
+
+  .veg-non-veg-img {
+    width: 150px;
+    height: 80px;
+  }
+}
+
+/* Desktop screens */
+@media (min-width: 1200px) {
+  .hero {
+    padding: 2rem 8rem;
+  }
+
+  .main-title {
+    font-size: clamp(4rem, 8vw, 6rem);
+    letter-spacing: 0.3rem;
+  }
+
+  .img-container {
+    max-width: 500px;
+  }
+
+  .img-container img {
+    max-height: 450px;
+  }
+
+  .about {
+    padding: 3rem 8rem;
+  }
+
+  .steps {
+    padding: 3rem 8rem;
+  }
+
+  .card-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cuisine-img {
+    width: 80px;
+  }
+
+  .veg-non-veg-img {
+    width: 180px;
+    height: 90px;
+  }
+
+  .cta-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(1.1rem, 4vw, 1.25rem);
+  }
 }
